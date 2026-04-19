@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Photo gallery from Colibri Land and Cattle ranch near Knoxville, Tennessee.">
+    <title>Photo gallery | Colibri Land &amp; Cattle</title>
+    <link rel="icon" href="assets/logo.png?v=4" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#gallery-main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html#top">
+          <img class="brand-logo" src="assets/logo.png?v=4" alt="" width="56" height="56" data-logo>
+          <span class="brand-text">
+            Colibri Land &amp; Cattle
+            <small>Photo gallery</small>
+          </span>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Gallery">
+          <a href="index.html">Home</a>
+          <a href="index.html#contact">Contact</a>
+          <a class="nav-cta" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">See price sheet</a>
+        </nav>
+
+        <details class="nav-mobile">
+          <summary aria-label="Open navigation menu">
+            <span class="nav-mobile-summary-label">Menu</span>
+            <span class="nav-mobile-summary-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="nav-panel" role="navigation" aria-label="Mobile">
+            <a class="nav-panel-link" href="index.html">Home</a>
+            <a class="nav-panel-link" href="index.html#contact">Contact</a>
+            <a class="nav-panel-link nav-panel-cta" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">See price sheet</a>
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <main id="gallery-main" class="section gallery-page">
+      <h1>Ranch gallery</h1>
+      <p class="gallery-intro">
+        Scroll through the full set of ranch photos in one place. For a quick sideways preview, visit the On the ranch section on our <a href="index.html#ranch-photos">home page</a>.
+      </p>
+
+      <!-- New photos: duplicate a figure below; place the file in assets/ and match the filename in src. -->
+      <div class="gallery-stack">
+        <figure>
+          <img
+            src="assets/photo-winter-feeding.png"
+            alt="Black Angus cattle lined up at a metal feed trough in the snow."
+            width="1200"
+            height="900"
+            loading="eager"
+            decoding="async"
+          >
+          <figcaption>Winter feeding: Angus at the trough in the snow.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="assets/photo-barn-calves.png"
+            alt="A young calf and a black cow on clean straw bedding near a water trough inside the barn."
+            width="1200"
+            height="900"
+            loading="lazy"
+            decoding="async"
+          >
+          <figcaption>Barn time: calves and cows on fresh bedding.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="assets/photo-cuts-board.png"
+            alt="Marbled raw beef cuts on a striped wooden cutting board."
+            width="1200"
+            height="900"
+            loading="lazy"
+            decoding="async"
+          >
+          <figcaption>Marbled cuts on the board, ready for the kitchen.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="assets/photo-packaged-beef.png"
+            alt="Vacuum-sealed packages of ground beef stacked in a cooler."
+            width="1200"
+            height="900"
+            loading="lazy"
+            decoding="async"
+          >
+          <figcaption>Ground beef packed and stacked for pickup.</figcaption>
+        </figure>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <span>&copy; <span data-year></span> Colibri Land &amp; Cattle. All rights reserved.</span>
+      <span><a href="index.html">Back to home</a></span>
+    </footer>
+
+    <script>
+      document.querySelector("[data-year]").textContent = new Date().getFullYear();
+
+      (function logoFallback() {
+        var imgs = document.querySelectorAll("[data-logo]");
+        imgs.forEach(function (img) {
+          img.addEventListener("error", function () {
+            if (img.hasAttribute("data-logo")) img.remove();
+          });
+        });
+      })();
+
+      (function mobileMenuScrollLock() {
+        var nav = document.querySelector(".nav-mobile");
+        if (!nav) return;
+        nav.addEventListener("toggle", function () {
+          document.body.style.overflow = nav.open ? "hidden" : "";
+        });
+      })();
+
+      (function mobileNavCloseOnNavigate() {
+        var nav = document.querySelector(".nav-mobile");
+        if (!nav) return;
+        nav.querySelectorAll(".nav-panel-link").forEach(function (a) {
+          a.addEventListener("click", function () {
+            nav.removeAttribute("open");
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
