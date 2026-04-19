@@ -26,18 +26,23 @@
 
         <nav class="nav-desktop" aria-label="Primary">
           <a href="#about">About</a>
+          <a href="#learn-more">Regenerative practices</a>
           <a href="#pricing">Pricing</a>
           <a href="#contact">Contact</a>
           <a class="nav-cta" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">See price sheet</a>
         </nav>
 
         <details class="nav-mobile">
-          <summary aria-label="Open menu">Menu</summary>
-          <div class="nav-panel">
-            <a href="#about">About</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#contact">Contact</a>
-            <a href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">See price sheet</a>
+          <summary aria-label="Open navigation menu">
+            <span class="nav-mobile-summary-label">Menu</span>
+            <span class="nav-mobile-summary-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="nav-panel" role="navigation" aria-label="Mobile">
+            <a class="nav-panel-link" href="#about">About</a>
+            <a class="nav-panel-link" href="#learn-more">Regenerative practices</a>
+            <a class="nav-panel-link" href="#pricing">Pricing</a>
+            <a class="nav-panel-link" href="#contact">Contact</a>
+            <a class="nav-panel-link nav-panel-cta" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">See price sheet</a>
           </div>
         </details>
       </div>
@@ -100,6 +105,38 @@
         </div>
       </section>
 
+      <section class="section" id="learn-more" aria-labelledby="learn-more-heading">
+        <div class="section-head">
+          <h2 id="learn-more-heading">A deeper dive into regenerative practices and why they matter</h2>
+          <p>
+            You do not need a ranching background to understand how we work. Open the section below for plain language on breeding, land stewardship, and one surprising way we fight flies without extra chemicals.
+          </p>
+        </div>
+        <details class="learn-more-details">
+          <summary>
+            <span class="learn-more-summary-main">Breeding choices, land care, and natural fly control</span>
+            <span class="learn-more-summary-sub">Tap to expand the full story</span>
+          </summary>
+          <div class="learn-more-content">
+            <p>
+              At Colibri Land &amp; Cattle, we believe great beef starts long before the grill. A big part of that is <strong>how</strong> we breed cattle. We use artificial insemination, which means we pair each cow with specific genetics on purpose instead of leaving mating to chance. That lets us raise animals that grow well on feed, carry less waste for the resources we use, and still deliver the eating qualities people notice at the table.
+            </p>
+            <p>
+              In everyday terms, we are aiming for cattle that convert grass and grain into beef efficiently, with a lighter footprint where we can, while still producing rich marbling, tender cuts, and a generous ribeye. Those traits are not buzzwords to us—they are the measurable outcomes we select for when we choose genetics.
+            </p>
+            <p>
+              We also use <strong>sexed</strong> genetics, which is a way to stack the odds toward calves of the sex we want for each role on the ranch. We raise high performing steers for beef, and we build strong replacement females for the cow herd so the next generation stays healthy and consistent. That discipline is how we keep quality steady over time instead of riding luck.
+            </p>
+            <p>
+              All of that sits inside a bigger idea: <strong>regenerative</strong> ranching—taking care of soil, water, and pasture so the land can keep supporting cattle and wildlife for decades. Stewardship is not a side project here. It is part of how we think about the whole operation.
+            </p>
+            <p>
+              One practical piece you might not expect is fly control. Flies stress cattle and push people toward heavier pesticide use. We use tiny beneficial parasitic wasps that target fly eggs in the environment. They are a natural check on fly numbers, which helps us spray less and gives our cattle a calmer, healthier place to live.
+            </p>
+          </div>
+        </details>
+      </section>
+
       <section class="section" id="pricing" aria-labelledby="pricing-heading">
         <div class="section-head">
           <h2 id="pricing-heading">Price sheet</h2>
@@ -160,6 +197,24 @@
             if (placeholder) placeholder.hidden = false;
             if (img.hasAttribute("data-logo")) img.remove();
             if (img.hasAttribute("data-hero-logo")) img.remove();
+          });
+        });
+      })();
+
+      (function mobileMenuScrollLock() {
+        var nav = document.querySelector(".nav-mobile");
+        if (!nav) return;
+        nav.addEventListener("toggle", function () {
+          document.body.style.overflow = nav.open ? "hidden" : "";
+        });
+      })();
+
+      (function mobileNavCloseOnNavigate() {
+        var nav = document.querySelector(".nav-mobile");
+        if (!nav) return;
+        nav.querySelectorAll(".nav-panel-link").forEach(function (a) {
+          a.addEventListener("click", function () {
+            nav.removeAttribute("open");
           });
         });
       })();
