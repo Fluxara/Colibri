@@ -485,17 +485,25 @@
         var iframe = document.querySelector(".pdf-frame-wrap iframe");
         var fallback = document.querySelector("[data-pdf-fallback]");
         if (!iframe || !fallback) return;
+        var loaded = false;
+
+        iframe.addEventListener("load", function () {
+          loaded = true;
+        });
+
+        iframe.addEventListener("error", function () {
+          iframe.style.display = "none";
+          fallback.hidden = false;
+        });
+
+        // Some browsers handle PDF rendering outside iframe DOM.
+        // Keep inline preview unless we have clear evidence of failure.
         window.setTimeout(function () {
-          try {
-            var doc = iframe.contentDocument;
-            if (!doc || !doc.body || doc.body.children.length === 0) {
-              iframe.style.display = "none";
-              fallback.hidden = false;
-            }
-          } catch (e) {
-            /* cross-origin or blocked: keep iframe visible */
+          if (!loaded && !iframe.contentWindow) {
+            iframe.style.display = "none";
+            fallback.hidden = false;
           }
-        }, 2500);
+        }, 4000);
       })();
     </script>
   </body>
