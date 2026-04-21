@@ -774,10 +774,11 @@ a:hover {
   background: #fff;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
-  overflow: hidden;
+  overflow: auto;
   box-shadow: var(--shadow-soft);
   min-height: 520px;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .pdf-frame-wrap iframe {
@@ -807,9 +808,13 @@ a:hover {
 }
 
 @media (max-width: 900px) {
+  .pdf-frame-wrap {
+    max-height: 78vh;
+  }
+
   .pdf-frame-wrap iframe {
-    height: 72vh;
-    min-height: 520px;
+    height: 1400px;
+    min-height: 1200px;
   }
 
   .pdf-preview-btn {
