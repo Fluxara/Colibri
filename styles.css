@@ -754,21 +754,30 @@ a:hover {
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: start;
+  grid-template-areas:
+    "preview side"
+    "preview-link side";
 }
 
 @media (max-width: 900px) {
   .pricing-layout {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "preview"
+      "preview-link"
+      "side";
   }
 }
 
 .pdf-frame-wrap {
+  grid-area: preview;
   background: #fff;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
   overflow: hidden;
   box-shadow: var(--shadow-soft);
   min-height: 520px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .pdf-frame-wrap iframe {
@@ -778,6 +787,11 @@ a:hover {
   display: block;
 }
 
+.pdf-preview-btn {
+  grid-area: preview-link;
+  width: fit-content;
+}
+
 .pdf-fallback {
   padding: 2rem;
   text-align: center;
@@ -785,10 +799,23 @@ a:hover {
 }
 
 .pdf-side {
+  grid-area: side;
   background: #fff;
   padding: 1.75rem;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
+}
+
+@media (max-width: 900px) {
+  .pdf-frame-wrap iframe {
+    height: 72vh;
+    min-height: 520px;
+  }
+
+  .pdf-preview-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .pdf-side h3 {
