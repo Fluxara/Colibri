@@ -394,29 +394,20 @@
 
       <section class="section" id="pricing" aria-labelledby="pricing-heading">
         <div class="section-head">
-          <h2 id="pricing-heading">Price sheet</h2>
-          <p>Scroll the price sheet below, or open a full-size copy in a new tab.</p>
+          <h2 id="pricing-heading">Our Pricing</h2>
+          <p>Open the full price sheet in a new tab for the best viewing experience on desktop and mobile.</p>
         </div>
         <div class="pricing-layout">
-          <div class="pdf-frame-wrap">
-            <iframe
-              title="Colibri Land &amp; Cattle price sheet"
-              src="assets/price-sheet.pdf"
-              loading="lazy"
-              scrolling="yes"
-            ></iframe>
-            <div class="pdf-fallback" hidden data-pdf-fallback>
-              <p>This browser may not preview PDFs inline.</p>
-              <p><a href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">See the full price sheet</a></p>
-            </div>
+          <div class="pricing-open-sheet">
+            <h3>View the full price sheet</h3>
+            <p>Tap the button below to open the complete price sheet in a separate tab where it is easier to read and scroll.</p>
+            <a class="btn btn-primary" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">Open full price sheet</a>
           </div>
-          <a class="btn btn-primary pdf-preview-btn" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">Open full price sheet</a>
           <aside class="pdf-side" aria-label="Pricing actions">
             <h3>Don't know what to buy?</h3>
             <p>
               Tell us what you are shopping for and we will help you pick out cuts or a bundle that fit your household. We will confirm what is in stock and the final price before your order is set in stone.
             </p>
-            <a class="btn btn-primary" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">See full price sheet</a>
             <a class="btn btn-secondary" href="#contact">Contact us</a>
           </aside>
         </div>
@@ -479,31 +470,6 @@
             nav.removeAttribute("open");
           });
         });
-      })();
-
-      (function pdfIframeCheck() {
-        var iframe = document.querySelector(".pdf-frame-wrap iframe");
-        var fallback = document.querySelector("[data-pdf-fallback]");
-        if (!iframe || !fallback) return;
-        var loaded = false;
-
-        iframe.addEventListener("load", function () {
-          loaded = true;
-        });
-
-        iframe.addEventListener("error", function () {
-          iframe.style.display = "none";
-          fallback.hidden = false;
-        });
-
-        // Some browsers handle PDF rendering outside iframe DOM.
-        // Keep inline preview unless we have clear evidence of failure.
-        window.setTimeout(function () {
-          if (!loaded && !iframe.contentWindow) {
-            iframe.style.display = "none";
-            fallback.hidden = false;
-          }
-        }, 4000);
       })();
     </script>
   </body>
