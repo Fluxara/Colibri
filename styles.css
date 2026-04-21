@@ -9,11 +9,33 @@
   --color-accent-hover: #8a3a36;
   --color-green: #2f4a32;
   --color-border: rgba(28, 25, 21, 0.12);
+  --color-border-sharp: rgba(28, 25, 21, 0.24);
   --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Source Sans 3", system-ui, sans-serif;
   --shadow-soft: 0 4px 24px rgba(28, 25, 21, 0.08);
   --radius: 12px;
   --max-width: 1120px;
+}
+
+/* Sharper 1px treatment for photo and content boxes */
+.hero-card,
+.feature-card,
+.photo-tile,
+.gallery-stack figure,
+.pdf-frame-wrap,
+.pdf-side,
+.contact-card,
+.learn-more-details,
+.freeze-branding-photo {
+  border: 1px solid var(--color-border-sharp);
+}
+
+/* Give each visible photo edge definition inside its container */
+.hero-card-figure--photo img,
+.photo-tile img,
+.gallery-stack img,
+.freeze-branding-photo img {
+  border: 1px solid var(--color-border-sharp);
 }
 
 *,
@@ -460,7 +482,22 @@ a:hover {
   padding: 2rem 2.25rem;
 }
 
-.hero-card-figure img {
+.hero-card-figure--photo {
+  padding: 0;
+  display: block;
+}
+
+.hero-card-figure--photo img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-card-figure:not(.hero-card-figure--photo) img {
   max-height: min(280px, 42vw);
   width: auto;
   max-width: 100%;
@@ -899,4 +936,60 @@ a:hover {
 .learn-more-content strong {
   color: var(--color-ink);
   font-weight: 600;
+}
+
+/* Freeze + regenerative: same content column as expandable panels */
+#freeze-branding .section-head,
+#learn-more .section-head {
+  max-width: 46rem;
+}
+
+/* Freeze branding: photo showcase (width aligns with .learn-more-details below) */
+.freeze-branding-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  max-width: 46rem;
+  margin: 0 0 2.25rem;
+}
+
+@media (max-width: 700px) {
+  .freeze-branding-showcase {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+  }
+}
+
+.freeze-branding-photo {
+  margin: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  background: #fff;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.freeze-branding-photo:hover {
+  box-shadow: 0 8px 32px rgba(28, 25, 21, 0.1);
+  transform: translateY(-2px);
+}
+
+.freeze-branding-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.freeze-branding-photo figcaption {
+  margin: 0;
+  padding: 0.75rem 1rem 0.9rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--color-ink-muted);
+  border-top: 1px solid var(--color-border);
+  background: linear-gradient(180deg, #fff 0%, #faf8f5 100%);
 }

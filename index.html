@@ -12,6 +12,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Colibri Land and Cattle, premium Black Angus beef from our family ranch just outside of Knoxville, TN.">
     <title>Colibri Land &amp; Cattle</title>
     <link rel="icon" href="assets/logo.png?v=4" type="image/png">
@@ -35,7 +36,7 @@
 
         <nav class="nav-desktop" aria-label="Primary">
           <a href="#about">About</a>
-          <a href="#learn-more">Regenerative practices</a>
+          <a href="#freeze-branding">How We Raise</a>
           <a href="#pricing">Pricing</a>
           <a href="#contact">Contact</a>
           <a class="nav-cta" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">See price sheet</a>
@@ -48,7 +49,7 @@
           </summary>
           <div class="nav-panel" role="navigation" aria-label="Mobile">
             <a class="nav-panel-link" href="#about">About</a>
-            <a class="nav-panel-link" href="#learn-more">Regenerative practices</a>
+            <a class="nav-panel-link" href="#freeze-branding">How We Raise</a>
             <a class="nav-panel-link" href="#pricing">Pricing</a>
             <a class="nav-panel-link" href="#contact">Contact</a>
             <a class="nav-panel-link nav-panel-cta" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">See price sheet</a>
@@ -61,11 +62,11 @@
       <section class="hero" aria-labelledby="hero-heading">
         <div class="hero-grid">
           <div>
-            <p class="hero-badge">Raised on our ranch</p>
-            <h1 id="hero-heading">Quality beef from our family to yours</h1>
+            <p class="hero-badge">Raised ethically on our ranch</p>
+            <h1 id="hero-heading">Quality Beef From Our Family To Yours</h1>
             <p class="hero-lead">
-              We raise cattle with care and precision, offering cuts and bundles for your table or freezer.
-              Browse our price sheet, then call or text when you are ready to order!
+              We raise our cattle with care and precision, offering cuts and bundles for your table or freezer.
+              Browse our price sheet to find the best affordable, premium Black Angus beef in the Knoxville area!
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#pricing">View pricing</a>
@@ -73,36 +74,42 @@
             </div>
           </div>
           <div class="hero-card">
-            <div class="hero-card-figure">
-              <img src="assets/logo.png?v=4" alt="Colibri Land &amp; Cattle logo" width="400" height="250" data-hero-logo>
+            <div class="hero-card-figure hero-card-figure--photo" aria-label="Ranch photo">
+              <img
+                src="assets/photo-pond-mist-pasture.png"
+                alt="Cattle beside a calm pond with morning mist and a large tree at the water's edge."
+                width="900"
+                height="1200"
+                loading="eager"
+                decoding="async"
+                data-hero-logo
+              >
               <p class="hero-card-placeholder" hidden data-logo-placeholder>Colibri Land &amp; Cattle</p>
             </div>
-            <p class="hero-card-caption">Local roots, fair prices, and beef you can feel good serving.</p>
           </div>
-        </div>
       </section>
 
       <section class="section ranch-photos-section" id="ranch-photos" aria-labelledby="photos-heading">
         <div class="section-head section-head-split">
           <div class="section-head-text">
-            <h2 id="photos-heading">On the ranch</h2>
-            <p>Browse the gallery below for a closer look at our ranch and the work we do.</p>
+            <h2 id="photos-heading">On The Ranch</h2>
+            <p>Browse the gallery below for a closer look at our ranch.</p>
           </div>
           <a class="btn btn-secondary btn-gallery-external" href="gallery.html" target="_blank" rel="noopener noreferrer">Open full gallery</a>
         </div>
-        <p class="gallery-scroll-hint">Swipe sideways on your phone, or use the bar below, to see more photos.</p>
+        <p class="gallery-scroll-hint">Swipe or use the scroll bar below, to see more photos.</p>
         <div
           class="photo-gallery-scroll"
           tabindex="0"
           role="region"
-          aria-label="Ranch photos, scroll sideways for more"
+          aria-label="Ranch photos, scroll for more"
         >
           <div class="photo-gallery-track">
           
             <figure class="photo-tile">
               <img
                 src="assets/photo-barn-calves.png"
-                alt="A young calf and a black cow on clean straw bedding near a water trough inside the barn."
+                alt="Fresh bedding for momma and her calf."
                 width="1200"
                 height="900"
                 loading="lazy"
@@ -112,7 +119,7 @@
             <figure class="photo-tile">
               <img
                 src="assets/photo-calf-barn.png"
-                alt="A young calf resting on straw inside the barn, with corrugated metal siding behind."
+                alt="New Calf!"
                 width="574"
                 height="1024"
                 loading="lazy"
@@ -123,7 +130,7 @@
             <figure class="photo-tile">
               <img
                 src="assets/photo-pasture-gate.png"
-                alt="A green pasture stretching toward a treeline, with a red gate and fence posts in the foreground."
+                alt="Big green pasture."
                 width="768"
                 height="1024"
                 loading="lazy"
@@ -133,7 +140,7 @@
             <figure class="photo-tile">
               <img
                 src="assets/photo-cows-pasture.png"
-                alt="Two black cows resting in tall green grass near a tree line and fence."
+                alt="Two mommas resting in the pasture."
                 width="588"
                 height="1024"
                 loading="lazy"
@@ -143,9 +150,78 @@
             <figure class="photo-tile">
               <img
                 src="assets/photo-winter-feeding.png"
-                alt="Black Angus cattle lined up at a metal feed trough in the snow."
+                alt="Cattle lined up feeding in the snow."
                 width="1200"
                 height="900"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+            <figure class="photo-tile">
+              <img
+                src="assets/photo-pasture-herd-line.png"
+                alt="Cattle lined up in the pasture on a beautiful evening."
+                width="900"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+            <figure class="photo-tile">
+              <img
+                src="assets/photo-calf-pasture-facing.png"
+                alt="One of our Black Angus calves standing in tall green pasture grass."
+                width="900"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+            <figure class="photo-tile">
+              <img
+                src="assets/photo-pond-mist-pasture.png"
+                alt="Cattle grazing under the Willow!"
+                width="900"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+            <figure class="photo-tile">
+              <img
+                src="assets/photo-cows-autumn-grazing.png"
+                alt="Two cows grazing in one of our pastures with autumn-colored trees on the ridge behind them."
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+            <figure class="photo-tile">
+              <img
+                src="assets/photo-calf-barn-feeder.png"
+                alt="One of our calves in the barn."
+                width="900"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+            <figure class="photo-tile">
+              <img
+                src="assets/photo-cows-hillside-pasture.png"
+                alt="Several cows grazing a steep green hillside."
+                width="900"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+            <figure class="photo-tile">
+              <img
+                src="assets/photo-calf-and-cow-wildflowers.png"
+                alt="Calf and her momma in the pasture."
+                width="900"
+                height="1200"
                 loading="lazy"
                 decoding="async"
               >
@@ -153,17 +229,18 @@
             <figure class="photo-tile">
               <img
                 src="assets/photo-cuts-board.png"
-                alt="Marbled raw beef cuts on a striped wooden cutting board."
+                alt="Beautiful Ribs for Easter!"
                 width="1200"
                 height="900"
                 loading="lazy"
                 decoding="async"
               >
             </figure>
+            
             <figure class="photo-tile">
               <img
                 src="assets/photo-packaged-beef.png"
-                alt="Vacuum-sealed packages of ground beef stacked in a cooler."
+                alt="Vacuum-sealed ground beef!"
                 width="1200"
                 height="900"
                 loading="lazy"
@@ -176,46 +253,123 @@
 
       <section class="section section-alt" id="about" aria-labelledby="about-heading">
         <div class="section-head">
-          <h2 id="about-heading">About us</h2>
+          <h2 id="about-heading">About Us</h2>
           <p>
-            We are a family run ranch rooted in Knoxville, Tennessee. Marcos and Nevin Alonso are the owners, bringing years of hands on cattle experience and a B.S. in Animal Science from Texas A&amp;M. Our family handles all of the daily work on the ranch, and
+            We are a family run ranch rooted in Knoxville, Tennessee. Marcos and Nevin Alonso are the owners, both bring years of hands on cattle experience and a B.S. in Animal Science from Texas A&amp;M. Our family handles all of the daily work on the ranch, and
             we are honored to bring premium Black Angus beef to your table at a fair price.
           </p>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
-            <h3>How we raise</h3>
+            <h3>Our Healthy Herd</h3>
             <p>
-              Our herd is built on premium Black Angus genetics. Our cattle graze on pastures that we keep pesticide free and supplement with grain as part of a balanced feeding program.
-              We farm with care for the land keeping regenerative practices in mind. Healthy soil, water, and animals matter to us.
+              Our herd is built on premium Black Angus genetics. Our cattle graze on pastures that we keep pesticide-free and supplement with grain as part of a balanced feeding program. Our cattle are blessed with a low stress environment and are treated with the utmost care and respect.
+              We farm with care for the land, keeping regenerative practices in mind. Healthy soil, water, and animals matter to us and we are proud to be able to offer you a product that is not only delicious but also good for the planet.
             </p>
           </article>
           <article class="feature-card">
-            <h3>What we sell</h3>
+            <h3>What We Sell</h3>
             <p>
-              We are growing at a steady pace, so availability is limited right now. To keep things fair for neighbors and returning customers, we cap each order at 60 pounds of beef.
-              That way more families can try our beef while quality stays consistent. Our price sheet lists cuts and bundles but we can customize a bundle that fits your needs.
+              We don't beleive in substitutes for quality, so our availbility is limited for now. To keep things fair for neighbors and returning customers, we currently cap each order at 60 pounds of beef.
+              That way more families can try our beef while quality and regenerative practices stay consistent. Our price sheet lists our standard cuts and bundles, but we can absolutely customize a bundle that best fits your needs.
             </p>
           </article>
           <article class="feature-card">
-            <h3>Pickup &amp; delivery</h3>
+            <h3>Pickup &amp; Delivery</h3>
             <p>
-              We do not currently ship beef. When you order, we will work out the best place and time to fulfill your order. Our family works full time jobs so scheudling in advance is appreciated!
+              We do not currently ship beef, but we are happy to deliver to the Knoxville, Tennessee area. When you order, we will work out the best place and time to fulfill your order. Our family members all have full time jobs so scheudling in advance is appreciated!
             </p>
           </article>
         </div>
       </section>
 
+      <section class="section freeze-branding" id="freeze-branding" aria-labelledby="freeze-branding-heading">
+        <div class="section-head">
+          <h2 id="freeze-branding-heading">Freeze Branding vs Traditional Branding.</h2>
+          <p>
+            We use freeze branding for reliable cattle identification while helping keep the process lower stress for calves compared with traditional hot-iron branding.
+          </p>
+        </div>
+        <div class="freeze-branding-showcase" aria-label="Freeze branding on our cattle">
+          <figure class="freeze-branding-photo">
+            <img
+              src="assets/Calf_Freeze_Brand.jpeg"
+              alt="A young calf after freeze branding, showing the identification mark on the hide."
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>Right after branding: a clear mark with less tissue damage than hot iron.</figcaption>
+          </figure>
+          <figure class="freeze-branding-photo">
+            <img
+              src="assets/Healed_Freeze_Brand.jpeg"
+              alt="Healed hide on a black cow showing a pale freeze brand, readable at a distance."
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>Healed in: the brand stays easy to read for herd records and care.</figcaption>
+          </figure>
+        </div>
+        <details class="learn-more-details">
+          <summary>
+            <span class="learn-more-summary-main">More On Why We Use Freeze Branding</span>
+            <span class="learn-more-summary-sub">Tap for the full story</span>
+          </summary>
+          <div class="learn-more-content">
+            <p>
+              Freeze branding uses extreme cold to affect pigment-producing cells in the hair follicle, which creates a clear, readable brand as lighter hair grows back in. Traditional hot branding marks by burning tissue.
+            </p>
+            <p>
+              For us, the practical benefit is dependable long-term identification with less tissue damage. That generally means less inflammation, cleaner healing, and less chance of hide damage than hot branding.
+            </p>
+            <p>
+              We also focus on low-stress handling before, during, and after branding. Keeping cattle calm in the chute, using efficient technique, and minimizing handling time helps reduce stress on calves through the process.
+            </p>
+            <p>
+              Identification matters for herd records, health tracking, and breeding decisions. Freeze branding helps us keep that accuracy while staying aligned with our animal-care priorities.
+            </p>
+          </div>
+        </details>
+      </section>
+
       <section class="section" id="learn-more" aria-labelledby="learn-more-heading">
         <div class="section-head">
-          <h2 id="learn-more-heading">Regenerative Practices and Why it Matters.</h2>
+          <h2 id="learn-more-heading">Regenerative Practices and Why It Matters.</h2>
           <p>
             You don't need a ranching background to understand what we do. Below we discuss breeding, land stewardship, and a simple way we cut down on flies without leaning on extra chemicals.
           </p>
         </div>
+        <div class="freeze-branding-showcase" aria-label="Regenerative ranching views from our pasture">
+          <figure class="freeze-branding-photo">
+            <img
+              src="assets/photo-pasture-gate.png"
+              alt="A ranch gate opening into green pasture land on our property."
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>Healthy pastures begin with steady stewardship and careful grazing practices.</figcaption>
+          </figure>
+          <figure class="freeze-branding-photo">
+            <img
+              src="assets/photo-cows-pasture.png"
+              alt="A cow resting in the pasture grass under open sky."
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            >
+            <figcaption>Open pastures are part of how we keep our cattle healthy and happy.</figcaption>
+          </figure>
+        </div>
         <details class="learn-more-details">
           <summary>
-            <span class="learn-more-summary-main">More on Regenerative Practices</span>
+            <span class="learn-more-summary-main">More About Our Regenerative Practices</span>
             <span class="learn-more-summary-sub">Tap for the full story</span>
           </summary>
           <div class="learn-more-content">
@@ -269,7 +423,7 @@
         </div>
         <div class="contact-grid">
           <div class="contact-card">
-            <h3>Marcos &amp Nevin Alonso</h3>
+            <h3>Marcos &amp; Nevin Alonso</h3>
             <p>Owners</p>
             <p><a href="tel:+16192285198">(619) 228-5198</a></p>
           </div>
