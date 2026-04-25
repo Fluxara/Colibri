@@ -1,0 +1,8 @@
+{
+  "name": "colibri-land-cattle-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync-inventory": "node scripts/sync-inventory.mjs"
+  }
+}

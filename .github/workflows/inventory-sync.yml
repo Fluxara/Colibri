@@ -1,0 +1,43 @@
+name: Sync inventory from Google Sheet
+
+on:
+  schedule:
+    # Daily ~ 6:00 AM UTC (adjust as needed)
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: inventory-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Sync inventory JSON
+        env:
+          INVENTORY_SHEET_CSV_URL: ${{ secrets.INVENTORY_SHEET_CSV_URL }}
+        run: node scripts/sync-inventory.mjs
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/inventory.json
+          if git diff --staged --quiet; then
+            echo "No inventory changes to commit."
+          else
+            git commit -m "chore: sync inventory from Google Sheet"
+            git push
+          fi

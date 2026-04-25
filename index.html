@@ -395,12 +395,12 @@
       <section class="section" id="pricing" aria-labelledby="pricing-heading">
         <div class="section-head">
           <h2 id="pricing-heading">Our Pricing</h2>
-          <p>Open the full price sheet in a new tab for the best viewing experience on desktop and mobile.</p>
+          <p>View current available cuts and estimated totals below. Inventory updates as items are sold.</p>
         </div>
         <div class="pricing-layout">
           <div class="pricing-open-sheet">
             <h3>View the full price sheet</h3>
-            <p>Tap the button below to open the complete price sheet in a separate tab where it is easier to read and scroll.</p>
+            <p>Use the button below to open the complete price sheet in a separate tab.</p>
             <a class="btn btn-primary" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">Open full price sheet</a>
           </div>
           <aside class="pdf-side" aria-label="Pricing actions">
@@ -410,6 +410,37 @@
             </p>
             <a class="btn btn-secondary" href="#contact">Contact us</a>
           </aside>
+        </div>
+        <div class="inventory-card" aria-label="Current inventory list">
+          <h3>Current Inventory</h3>
+          <p class="inventory-note">Approximate weights and totals shown.</p>
+          <div class="inventory-table-wrap">
+            <table class="inventory-table">
+              <thead>
+                <tr>
+                  <th scope="col">Cut</th>
+                  <th scope="col">Approx. quantity</th>
+                  <th scope="col">Estimated total</th>
+                </tr>
+              </thead>
+              <tbody id="inventory-tbody"></tbody>
+            </table>
+          </div>
+          <template id="inventory-fallback-template">
+            <tr><td>Filet Mignon</td><td>3.66 lbs</td><td>$117.12</td></tr>
+            <tr><td>Flat Iron</td><td>1.46 lbs</td><td>$33.21</td></tr>
+            <tr><td>Beef Round Steak</td><td>2.84 lbs</td><td>$31.24</td></tr>
+            <tr><td>Short Ribs (Slab)</td><td>7.62 lbs</td><td>$99.06</td></tr>
+            <tr><td>Short Ribs (Square)</td><td>8.60 lbs</td><td>$124.70</td></tr>
+            <tr><td>Rump Roast</td><td>7.00 lbs (2 roasts)</td><td>$70.00</td></tr>
+            <tr><td>Eye of Round Roast</td><td>7.00 lbs (2 roasts)</td><td>$63.00</td></tr>
+            <tr><td>Cubed Steak</td><td>7.44 lbs</td><td>$74.40</td></tr>
+            <tr><td>Beef Stew Meat</td><td>9.00 lbs</td><td>$90.00</td></tr>
+            <tr><td>Liver</td><td>9.00 lbs</td><td>$99.00</td></tr>
+            <tr><td>Beef Hearts</td><td>0.80 lbs</td><td>$5.59</td></tr>
+            <tr><td>Marrow Bones</td><td>6 bones</td><td>$42.00</td></tr>
+            <tr><td>Beef Fat</td><td>Two 5 lb bags</td><td>$60.00</td></tr>
+          </template>
         </div>
       </section>
 
@@ -470,6 +501,69 @@
             nav.removeAttribute("open");
           });
         });
+      })();
+
+      (function inventoryFromJson() {
+        var tbody = document.getElementById("inventory-tbody");
+        var note = document.querySelector(".inventory-note");
+        var fallback = document.getElementById("inventory-fallback-template");
+        if (!tbody) return;
+
+        function applyRows(rows) {
+          tbody.textContent = "";
+          rows.forEach(function (r) {
+            var tr = document.createElement("tr");
+            [r.cut, r.quantity, r.total].forEach(function (text) {
+              var td = document.createElement("td");
+              td.textContent = text == null ? "" : String(text);
+              tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+          });
+        }
+
+        function useFallback() {
+          tbody.textContent = "";
+          if (fallback && fallback.content) {
+            tbody.appendChild(fallback.content.cloneNode(true));
+            if (note) {
+              note.textContent =
+                "Approximate weights and totals shown (cached list — live data unavailable).";
+            }
+          } else {
+            tbody.innerHTML =
+              "<tr><td colspan=\"3\">Inventory could not be loaded. See the price sheet or contact us.</td></tr>";
+          }
+        }
+
+        fetch("assets/inventory.json", { cache: "no-store" })
+          .then(function (res) {
+            if (!res.ok) throw new Error("bad status");
+            return res.json();
+          })
+          .then(function (data) {
+            if (!data || !Array.isArray(data.rows) || !data.rows.length) {
+              useFallback();
+              return;
+            }
+            applyRows(data.rows);
+            if (note && data.updatedAt) {
+              try {
+                var d = new Date(data.updatedAt);
+                if (!isNaN(d.getTime())) {
+                  note.textContent =
+                    "Approximate weights and totals shown. Last updated " +
+                    d.toLocaleDateString(undefined, { dateStyle: "medium" }) +
+                    ".";
+                }
+              } catch (e) {
+                /* keep default note */
+              }
+            }
+          })
+          .catch(function () {
+            useFallback();
+          });
       })();
     </script>
   </body>
