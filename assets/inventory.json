@@ -1,61 +1,71 @@
 {
-  "updatedAt": "2026-04-25T18:16:14.771Z",
+  "updatedAt": "2026-04-25T18:24:10.803Z",
   "source": "google-sheet-csv",
   "rows": [
     {
-      "cut": "/*",
-      "quantity": "—",
-      "total": "—"
+      "cut": "Filet Mignon",
+      "quantity": "3.66 lbs",
+      "total": "$117.12"
     },
     {
-      "cut": "Copyright The Closure Library Authors.",
-      "quantity": "—",
-      "total": "—"
+      "cut": "Flat Iron",
+      "quantity": "1.46 lbs",
+      "total": "$33.21"
     },
     {
-      "cut": "SPDX-License-Identifier: Apache-2.0",
-      "quantity": "—",
-      "total": "—"
+      "cut": "Beef Round Steak",
+      "quantity": "2.84 lbs",
+      "total": "$31.24"
     },
     {
-      "cut": "*/",
-      "quantity": "—",
-      "total": "—"
+      "cut": "Short Ribs (Slab)",
+      "quantity": "7.62 lbs",
+      "total": "$99.06"
     },
     {
-      "cut": "function a(c){var f",
-      "quantity": "—",
-      "total": "h;if(((f=document)==null?0:(g=f.fonts)==null?0:(h=g.ready)==null?0:h.then)&&typeof document.fonts.ready.then==function){var k"
+      "cut": "Short Ribs (Square)",
+      "quantity": "8.60 lbs",
+      "total": "$124.70"
     },
     {
-      "cut": "for(var b=[DOCS_attachInitialMaterialFontLoadListener]",
-      "quantity": "—",
-      "total": "e;b.length&&(e=b.shift());)b.length||a===void 0?d[e]&&d[e]!==Object.prototype[e]?d=d[e]:d=d[e]={}:d[e]=a;"
+      "cut": "Rump Roast",
+      "quantity": "6.00 lbs (2 roasts)",
+      "total": "$70.00"
     },
     {
-      "cut": "// Google Inc.",
-      "quantity": "—",
-      "total": "—"
+      "cut": "Eye of Round Roast",
+      "quantity": "6.00 lbs (2 roasts)",
+      "total": "$63.00"
     },
     {
-      "cut": "</script><script nonce=1nMM1g5ioHZs5TSVX4iEcQ>DOCS_attachInitialMaterialFontLoadListener(DOCS_materialFontLoadStart);</script><style nonce=VOjjLSqf5bVfQqv7p2Y3aw>@font-face{font-family:'Noto Color Emoji';font-style:normal;font-weight:400;src:url(//fonts.gstatic.com/s/notocoloremoji/v38/Yq6P-KqIXTD0t4D9z1ESnKM3-HpFWRxHy9A.ttf)format('truetype');}</style><style>:root{--docs-material-font-family:Roboto",
-      "quantity": "og.asy.en_US._E9DcZvlmBw.es5.O",
-      "total": "Helvetica"
+      "cut": "Cubed Steak",
+      "quantity": "7.44 lbs",
+      "total": "$74.40"
     },
     {
-      "cut": "g&&(a+=15);var f=d.getElementById(docs-chrome)",
-      "quantity": "—",
-      "total": "k=f?null:d.getElementById(docs-additional-bars);k=k?k.offsetHeight:0;var l=d.getElementById(grid-bottom-bar)"
+      "cut": "Beef Stew Meat",
+      "quantity": "9.00 lbs",
+      "total": "$90.00"
     },
     {
-      "cut": "e.style.display=block):(g.style.overflow=auto",
-      "quantity": "—",
-      "total": "—"
+      "cut": "Liver",
+      "quantity": "9.00 lbs",
+      "total": "$99.00"
     },
     {
-      "cut": "_bootstrap( 0.0 );</script><div role=navigation aria-label=Sheet tab bar><table id=grid-bottom-bar style='position: relative; bottom: 0; z-index: 100;' class=grid-bottom-bar  cellspacing=0 cellpadding=0 dir=ltr role=presentation><tr style=display:none; id=waffle-disclaimer-bar class=waffle-disclaimer><td colspan=5 id=waffle-disclaimer-content>Quotes are not sourced from all markets and may be delayed up to 20 minutes. Information is provided 'as is' and solely for informational purposes",
-      "quantity": "gaiaSessionId:",
-      "total": "appConfig:{staticResourcePathPrefix:"
+      "cut": "Beef Hearts",
+      "quantity": "0.80 lbs",
+      "total": "$5.59"
+    },
+    {
+      "cut": "Marrow Bones",
+      "quantity": "6 bones",
+      "total": "$42.00"
+    },
+    {
+      "cut": "Beef Fat",
+      "quantity": "Two 5 lb bags",
+      "total": "$60.00"
     }
   ]
 }
