@@ -89,6 +89,32 @@ function pickColumns(headers) {
   let quantity = -1;
   let pricePerLb = -1;
   let total = -1;
+  const has4Cols = headers.length >= 4;
+
+  function looksLikeTotalHeader(h) {
+    // Accept common misspellings users might type in sheets.
+    return (
+      h === "estimated total" ||
+      h === "total" ||
+      h.includes("estimated total") ||
+      h.includes("total amount") ||
+      h.includes("total") ||
+      h.includes("toatl") ||
+      h.includes("esitmated")
+    );
+  }
+
+  function looksLikePricePerLbHeader(h) {
+    return (
+      h === "price/lb" ||
+      h === "price per lb" ||
+      h === "price per pound" ||
+      h === "lb price" ||
+      h.includes("price/lb") ||
+      ((h.includes("price") || h.includes("cost")) && (h.includes("lb") || h.includes("pound")))
+    );
+  }
+
   n.forEach((h, idx) => {
     if (cut < 0 && (h === "cut" || h === "item" || h === "name" || h.includes("cut")))
       cut = idx;
@@ -102,18 +128,9 @@ function pickColumns(headers) {
         h.includes("approx"))
     )
       quantity = idx;
-    if (
-      pricePerLb < 0 &&
-      (h === "price/lb" ||
-        h === "price per lb" ||
-        h === "price per pound" ||
-        h === "lb price" ||
-        h.includes("price/lb") ||
-        (h.includes("price") && h.includes("lb")) ||
-        (h.includes("price") && h.includes("pound")))
-    )
+    if (pricePerLb < 0 && looksLikePricePerLbHeader(h))
       pricePerLb = idx;
-    if (total < 0 && (h === "estimated total" || h === "total" || h.includes("total amount") || h.includes("estimated total") || h.includes("total")))
+    if (total < 0 && looksLikeTotalHeader(h))
       total = idx;
   });
 
@@ -127,8 +144,21 @@ function pickColumns(headers) {
 
   if (cut < 0) cut = 0;
   if (quantity < 0) quantity = 1;
-  if (pricePerLb < 0) pricePerLb = 2;
-  if (total < 0) total = pricePerLb === 2 ? 3 : 2;
+  if (pricePerLb < 0) {
+    // For common 4-column layout: cut, quantity, price/lb, total
+    if (has4Cols) {
+      pricePerLb = 2;
+    } else {
+      pricePerLb = 2;
+    }
+  }
+  if (total < 0) {
+    if (has4Cols) {
+      total = 3;
+    } else {
+      total = pricePerLb === 2 ? 3 : 2;
+    }
+  }
   return { cut, quantity, pricePerLb, total };
 }
 
