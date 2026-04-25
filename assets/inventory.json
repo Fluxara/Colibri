@@ -1,71 +1,71 @@
 {
-  "updatedAt": "2026-04-25T18:24:10.803Z",
+  "updatedAt": "2026-04-25T19:37:44.249Z",
   "source": "google-sheet-csv",
   "rows": [
     {
       "cut": "Filet Mignon",
       "quantity": "3.66 lbs",
-      "total": "$117.12"
+      "total": "$32.00"
     },
     {
       "cut": "Flat Iron",
       "quantity": "1.46 lbs",
-      "total": "$33.21"
+      "total": "$13.50"
     },
     {
       "cut": "Beef Round Steak",
       "quantity": "2.84 lbs",
-      "total": "$31.24"
+      "total": "$9.99"
     },
     {
       "cut": "Short Ribs (Slab)",
       "quantity": "7.62 lbs",
-      "total": "$99.06"
+      "total": "$13.00"
     },
     {
       "cut": "Short Ribs (Square)",
       "quantity": "8.60 lbs",
-      "total": "$124.70"
+      "total": "$14.50"
     },
     {
       "cut": "Rump Roast",
       "quantity": "6.00 lbs (2 roasts)",
-      "total": "$70.00"
+      "total": "$10.00"
     },
     {
       "cut": "Eye of Round Roast",
       "quantity": "6.00 lbs (2 roasts)",
-      "total": "$63.00"
+      "total": "$9.00"
     },
     {
       "cut": "Cubed Steak",
       "quantity": "7.44 lbs",
-      "total": "$74.40"
+      "total": "$10.00"
     },
     {
       "cut": "Beef Stew Meat",
       "quantity": "9.00 lbs",
-      "total": "$90.00"
+      "total": "$9.00"
     },
     {
       "cut": "Liver",
       "quantity": "9.00 lbs",
-      "total": "$99.00"
+      "total": "$11.00"
     },
     {
       "cut": "Beef Hearts",
       "quantity": "0.80 lbs",
-      "total": "$5.59"
+      "total": "$6.99"
     },
     {
       "cut": "Marrow Bones",
       "quantity": "6 bones",
-      "total": "$42.00"
+      "total": "$7.00"
     },
     {
       "cut": "Beef Fat",
       "quantity": "Two 5 lb bags",
-      "total": "$60.00"
+      "total": "$6.00"
     }
   ]
 }
