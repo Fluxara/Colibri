@@ -1,71 +1,84 @@
 {
-  "updatedAt": "2026-04-25T19:37:44.249Z",
+  "updatedAt": "2026-04-25T19:51:27.486Z",
   "source": "google-sheet-csv",
   "rows": [
     {
       "cut": "Filet Mignon",
       "quantity": "3.66 lbs",
-      "total": "$32.00"
+      "pricePerLb": "$32.00",
+      "total": "$117.12"
     },
     {
       "cut": "Flat Iron",
       "quantity": "1.46 lbs",
-      "total": "$13.50"
+      "pricePerLb": "$13.50",
+      "total": "$33.21"
     },
     {
       "cut": "Beef Round Steak",
       "quantity": "2.84 lbs",
-      "total": "$9.99"
+      "pricePerLb": "$9.99",
+      "total": "$31.24"
     },
     {
       "cut": "Short Ribs (Slab)",
       "quantity": "7.62 lbs",
-      "total": "$13.00"
+      "pricePerLb": "$13.00",
+      "total": "$99.06"
     },
     {
       "cut": "Short Ribs (Square)",
       "quantity": "8.60 lbs",
-      "total": "$14.50"
+      "pricePerLb": "$14.50",
+      "total": "$124.70"
     },
     {
       "cut": "Rump Roast",
       "quantity": "6.00 lbs (2 roasts)",
-      "total": "$10.00"
+      "pricePerLb": "$10.00",
+      "total": "$70.00"
     },
     {
       "cut": "Eye of Round Roast",
       "quantity": "6.00 lbs (2 roasts)",
-      "total": "$9.00"
+      "pricePerLb": "$9.00",
+      "total": "$63.00"
     },
     {
       "cut": "Cubed Steak",
       "quantity": "7.44 lbs",
-      "total": "$10.00"
+      "pricePerLb": "$10.00",
+      "total": "$74.40"
     },
     {
       "cut": "Beef Stew Meat",
       "quantity": "9.00 lbs",
-      "total": "$9.00"
+      "pricePerLb": "$9.00",
+      "total": "$90.00"
     },
     {
       "cut": "Liver",
       "quantity": "9.00 lbs",
-      "total": "$11.00"
+      "pricePerLb": "$11.00",
+      "total": "$99.00"
     },
     {
       "cut": "Beef Hearts",
       "quantity": "0.80 lbs",
-      "total": "$6.99"
+      "pricePerLb": "$6.99",
+      "total": "$5.59"
     },
     {
       "cut": "Marrow Bones",
       "quantity": "6 bones",
-      "total": "$7.00"
+      "pricePerLb": "$7.00",
+      "total": "$42.00"
     },
     {
       "cut": "Beef Fat",
       "quantity": "Two 5 lb bags",
-      "total": "$6.00"
+      "pricePerLb": "$6.00",
+      "total": "$60.00"
     }
   ]
 }
