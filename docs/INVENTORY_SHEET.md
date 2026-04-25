@@ -10,16 +10,18 @@ Use **row 1** as headers. Each data row is one inventory line.
 |----------------|------------------------------------------|
 | Cut / item name | `cut`, `item`, `name`, or any header containing `cut` |
 | Approx. quantity | `quantity`, `qty`, `lbs`, `weight`, `approx`, or any header containing `quantity` or `lbs` |
+| Price per lb | `price/lb`, `price per lb`, `price per pound`, `lb price`, or any header containing both `price` and `lb`/`pound` |
 | Estimated total | `total`, `price`, `amount`, or any header containing `total` or `$` |
 
 Example:
 
-| cut | quantity | total |
-|-----|----------|-------|
-| Filet Mignon | 3.66 lbs | 117.12 |
-| Flat Iron | 1.46 lbs | 33.21 |
+| cut | quantity | price/lb | total |
+|-----|----------|----------|-------|
+| Filet Mignon | 3.66 lbs | 32.00 | 117.12 |
+| Flat Iron | 1.46 lbs | 22.75 | 33.21 |
 
 - **Quantity** is stored as plain text (e.g. `7.00 lbs (2 roasts)`, `6 bones`, `Two 5 lb bags`).
+- **Price per lb** can be a number (`32`) or text (`$32.00`); numbers are formatted as currency on the site.
 - **Total** can be a number (`117.12`) or text (`$117.12`); numbers are formatted as currency on the site.
 
 Empty rows are skipped. Rows with no `cut` are skipped.

@@ -89,6 +89,7 @@
                 <tr>
                   <th scope="col">Cut</th>
                   <th scope="col">Approx. quantity</th>
+                  <th scope="col">Price / lb</th>
                   <th scope="col">Estimated total</th>
                 </tr>
               </thead>
@@ -96,19 +97,19 @@
             </table>
           </div>
           <template id="inventory-fallback-template">
-            <tr><td>Filet Mignon</td><td>3.66 lbs</td><td>$117.12</td></tr>
-            <tr><td>Flat Iron</td><td>1.46 lbs</td><td>$33.21</td></tr>
-            <tr><td>Beef Round Steak</td><td>2.84 lbs</td><td>$31.24</td></tr>
-            <tr><td>Short Ribs (Slab)</td><td>7.62 lbs</td><td>$99.06</td></tr>
-            <tr><td>Short Ribs (Square)</td><td>8.60 lbs</td><td>$124.70</td></tr>
-            <tr><td>Rump Roast</td><td>7.00 lbs (2 roasts)</td><td>$70.00</td></tr>
-            <tr><td>Eye of Round Roast</td><td>7.00 lbs (2 roasts)</td><td>$63.00</td></tr>
-            <tr><td>Cubed Steak</td><td>7.44 lbs</td><td>$74.40</td></tr>
-            <tr><td>Beef Stew Meat</td><td>9.00 lbs</td><td>$90.00</td></tr>
-            <tr><td>Liver</td><td>9.00 lbs</td><td>$99.00</td></tr>
-            <tr><td>Beef Hearts</td><td>0.80 lbs</td><td>$5.59</td></tr>
-            <tr><td>Marrow Bones</td><td>6 bones</td><td>$42.00</td></tr>
-            <tr><td>Beef Fat</td><td>Two 5 lb bags</td><td>$60.00</td></tr>
+            <tr><td>Filet Mignon</td><td>3.66 lbs</td><td>—</td><td>$117.12</td></tr>
+            <tr><td>Flat Iron</td><td>1.46 lbs</td><td>—</td><td>$33.21</td></tr>
+            <tr><td>Beef Round Steak</td><td>2.84 lbs</td><td>—</td><td>$31.24</td></tr>
+            <tr><td>Short Ribs (Slab)</td><td>7.62 lbs</td><td>—</td><td>$99.06</td></tr>
+            <tr><td>Short Ribs (Square)</td><td>8.60 lbs</td><td>—</td><td>$124.70</td></tr>
+            <tr><td>Rump Roast</td><td>7.00 lbs (2 roasts)</td><td>—</td><td>$70.00</td></tr>
+            <tr><td>Eye of Round Roast</td><td>7.00 lbs (2 roasts)</td><td>—</td><td>$63.00</td></tr>
+            <tr><td>Cubed Steak</td><td>7.44 lbs</td><td>—</td><td>$74.40</td></tr>
+            <tr><td>Beef Stew Meat</td><td>9.00 lbs</td><td>—</td><td>$90.00</td></tr>
+            <tr><td>Liver</td><td>9.00 lbs</td><td>—</td><td>$99.00</td></tr>
+            <tr><td>Beef Hearts</td><td>0.80 lbs</td><td>—</td><td>$5.59</td></tr>
+            <tr><td>Marrow Bones</td><td>6 bones</td><td>—</td><td>$42.00</td></tr>
+            <tr><td>Beef Fat</td><td>Two 5 lb bags</td><td>—</td><td>$60.00</td></tr>
           </template>
         </div>
       </section>
@@ -159,7 +160,7 @@
           tbody.textContent = "";
           rows.forEach(function (r) {
             var tr = document.createElement("tr");
-            [r.cut, r.quantity, r.total].forEach(function (text) {
+            [r.cut, r.quantity, r.pricePerLb || "—", r.total].forEach(function (text) {
               var td = document.createElement("td");
               td.textContent = text == null ? "" : String(text);
               tr.appendChild(td);
@@ -178,7 +179,7 @@
             }
           } else {
             tbody.innerHTML =
-              "<tr><td colspan=\"3\">Inventory could not be loaded. See the price sheet or contact us.</td></tr>";
+              "<tr><td colspan=\"4\">Inventory could not be loaded. See the price sheet or contact us.</td></tr>";
           }
         }
 
