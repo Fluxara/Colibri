@@ -87,6 +87,7 @@ function pickColumns(headers) {
   const n = headers.map(normHeader);
   let cut = -1;
   let quantity = -1;
+  let pricePerLb = -1;
   let total = -1;
   n.forEach((h, idx) => {
     if (cut < 0 && (h === "cut" || h === "item" || h === "name" || h.includes("cut")))
@@ -102,15 +103,33 @@ function pickColumns(headers) {
     )
       quantity = idx;
     if (
-      total < 0 &&
-      (h === "total" || h.includes("total") || h.includes("price") || h.includes("amount") || h.includes("$"))
+      pricePerLb < 0 &&
+      (h === "price/lb" ||
+        h === "price per lb" ||
+        h === "price per pound" ||
+        h === "lb price" ||
+        h.includes("price/lb") ||
+        (h.includes("price") && h.includes("lb")) ||
+        (h.includes("price") && h.includes("pound")))
     )
+      pricePerLb = idx;
+    if (total < 0 && (h === "estimated total" || h === "total" || h.includes("total amount") || h.includes("estimated total") || h.includes("total")))
       total = idx;
   });
+
+  // Second pass for legacy sheet headings if no explicit "total" header was found.
+  if (total < 0) {
+    n.forEach((h, idx) => {
+      if (total >= 0) return;
+      if (h.includes("amount") || h === "$") total = idx;
+    });
+  }
+
   if (cut < 0) cut = 0;
   if (quantity < 0) quantity = 1;
-  if (total < 0) total = 2;
-  return { cut, quantity, total };
+  if (pricePerLb < 0) pricePerLb = 2;
+  if (total < 0) total = pricePerLb === 2 ? 3 : 2;
+  return { cut, quantity, pricePerLb, total };
 }
 
 function parseMoney(raw) {
@@ -168,7 +187,7 @@ async function main() {
   }
 
   const headerRow = grid[0].map((c) => String(c).trim());
-  const { cut, quantity, total } = pickColumns(headerRow);
+  const { cut, quantity, pricePerLb, total } = pickColumns(headerRow);
   const rows = [];
 
   for (let r = 1; r < grid.length; r++) {
@@ -176,11 +195,19 @@ async function main() {
     const cutVal = String(line[cut] ?? "").trim();
     if (!cutVal) continue;
     const qtyVal = String(line[quantity] ?? "").trim();
+    const pricePerLbRaw = line[pricePerLb];
+    const pricePerLbMoney = parseMoney(pricePerLbRaw);
     const totalRaw = line[total];
     const money = parseMoney(totalRaw);
     rows.push({
       cut: cutVal,
       quantity: qtyVal || "—",
+      pricePerLb:
+        pricePerLbMoney === null
+          ? "—"
+          : typeof pricePerLbMoney === "number"
+            ? formatMoney(pricePerLbMoney)
+            : pricePerLbMoney,
       total: money === null ? "—" : typeof money === "number" ? formatMoney(money) : money,
     });
   }
