@@ -48,6 +48,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Anchor targets clear the sticky header */
+#inventory {
+  scroll-margin-top: 5.5rem;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -351,6 +356,10 @@ a:hover {
     border-radius: 12px;
     margin-top: 0.35rem;
     border-bottom: none;
+  }
+
+  .nav-panel .nav-panel-cta + .nav-panel-cta {
+    margin-top: 0.5rem;
   }
 
   .hero {
