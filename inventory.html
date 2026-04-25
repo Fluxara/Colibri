@@ -69,21 +69,24 @@
           <h1 id="pricing-heading">Current Inventory</h1>
           <p>View current available cuts and estimated totals below! </p>
         </div>
-        <div class="pricing-layout">
-          <div class="pricing-open-sheet">
-            <h2>View the full price sheet</h2>
-            <p>Use the button below to open the complete price sheet in a separate tab.</p>
-            <a class="btn btn-primary" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">Open full price sheet</a>
-          </div>
-          <aside class="pdf-side" aria-label="Pricing actions">
-            <h2>Need help choosing cuts?</h2>
-            <p>
-              Tell us what you are shopping for and we will help you pick out cuts or a bundle that fit your household.
-              We will confirm what is in stock and the final price before your order is set in stone.
-            </p>
-            <a class="btn btn-secondary" href="index.html#contact">Contact us</a>
-          </aside>
-        </div>
+        <aside class="butcher-dates" aria-labelledby="butcher-dates-heading">
+          <h2 id="butcher-dates-heading" class="butcher-dates-title">2026 Harvesting Dates</h2>
+          <p class="butcher-dates-caption">Scheduled harvesting dates for 2026. </p>
+          <ul class="butcher-dates-list">
+            <li class="butcher-dates-item">
+              <span class="butcher-dates-month">May</span>
+              <span class="butcher-dates-day">19th</span>
+            </li>
+            <li class="butcher-dates-item">
+              <span class="butcher-dates-month">June</span>
+              <span class="butcher-dates-day">16th</span>
+            </li>
+            <li class="butcher-dates-item">
+              <span class="butcher-dates-month">July</span>
+              <span class="butcher-dates-day">21st</span>
+            </li>
+          </ul>
+        </aside>
         <div class="inventory-card" id="inventory" aria-label="Current inventory list">
           <h2>Available Now</h2>
           <p class="inventory-note">Approximate weights and totals shown.</p>
@@ -116,6 +119,46 @@
             <tr><td>Beef Fat</td><td>Two 5 lb bags</td><td>—</td><td>$60.00</td></tr>
           </template>
         </div>
+        <div class="pricing-layout">
+          <div class="pricing-open-sheet">
+            <h2>View the full price sheet</h2>
+            <p>Use the button below to open the complete price sheet in a separate tab. The full price sheet includes all of the cuts and bundles we offer, as well as the prices for each.</p>
+            <a class="btn btn-primary" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">Open full price sheet</a>
+          </div>
+          <aside class="pdf-side" aria-label="Pricing actions">
+            <h2>Need help choosing cuts?</h2>
+            <p>
+              Tell us what you are shopping for and we will help you pick out cuts or a bundle that fit your household.
+              We will confirm what is in stock and the final price before your order is set in stone.
+            </p>
+            <a class="btn btn-secondary" href="index.html#contact">Contact us</a>
+          </aside>
+        </div>
+        <section
+          class="inventory-disclosure"
+          aria-labelledby="inventory-disclosure-heading"
+        >
+          <h2 id="inventory-disclosure-heading" class="inventory-disclosure-title">
+            Ordering information
+          </h2>
+          <p class="inventory-disclosure-intro">
+            Please note the following information about our ordering process:
+          </p>
+          <div class="inventory-disclosure-prose">
+            <p>
+              Orders are typically ready within two weeks of the harvest date. All beef is processed in a USDA-inspected
+              facility, and we fulfill orders on a first-come, first-served basis.
+            </p>
+            <p>
+              Pre-ordering is recommended, since bundle quantities are limited. Bundle weights are estimated, but we
+              guarantee the total retail value will meet or exceed your purchase price.
+            </p>
+            <p>
+              No deposit is required; payment is due at pickup. All sales are final upon delivery. All prices are
+              subject to change based on the current market price of beef.
+            </p>
+          </div>
+        </section>
       </section>
     </main>
 
