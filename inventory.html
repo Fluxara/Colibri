@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-09MPXGNTBM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-09MPXGNTBM');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="description" content="Current inventory and pricing details from Colibri Land and Cattle.">
+    <title>Current inventory | Colibri Land &amp; Cattle</title>
+    <link rel="icon" href="assets/logo.png?v=4" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#inventory-main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html#top">
+          <img class="brand-logo" src="assets/logo.png?v=4" alt="" width="56" height="56" data-logo>
+          <span class="brand-text">
+            Colibri Land &amp; Cattle
+            <small>Current inventory</small>
+          </span>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="how-we-raise.html">How We Raise</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="index.html#contact">Contact</a>
+          <a class="nav-cta" href="#inventory">Current inventory</a>
+          <a class="nav-cta" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">See price sheet</a>
+        </nav>
+
+        <details class="nav-mobile">
+          <summary aria-label="Open navigation menu">
+            <span class="nav-mobile-summary-label">Menu</span>
+            <span class="nav-mobile-summary-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="nav-panel" role="navigation" aria-label="Mobile">
+            <a class="nav-panel-link" href="index.html">Home</a>
+            <a class="nav-panel-link" href="how-we-raise.html">How We Raise</a>
+            <a class="nav-panel-link" href="gallery.html">Gallery</a>
+            <a class="nav-panel-link" href="index.html#contact">Contact</a>
+            <a class="nav-panel-link nav-panel-cta" href="#inventory">Current inventory</a>
+            <a class="nav-panel-link nav-panel-cta" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">See price sheet</a>
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <main id="inventory-main">
+      <section class="section" id="pricing" aria-labelledby="pricing-heading">
+        <div class="section-head">
+          <h1 id="pricing-heading">Current Inventory</h1>
+          <p>View current available cuts and estimated totals below! </p>
+        </div>
+        <div class="pricing-layout">
+          <div class="pricing-open-sheet">
+            <h2>View the full price sheet</h2>
+            <p>Use the button below to open the complete price sheet in a separate tab.</p>
+            <a class="btn btn-primary" href="assets/price-sheet.pdf" target="_blank" rel="noopener noreferrer">Open full price sheet</a>
+          </div>
+          <aside class="pdf-side" aria-label="Pricing actions">
+            <h2>Need help choosing cuts?</h2>
+            <p>
+              Tell us what you are shopping for and we will help you pick out cuts or a bundle that fit your household.
+              We will confirm what is in stock and the final price before your order is set in stone.
+            </p>
+            <a class="btn btn-secondary" href="index.html#contact">Contact us</a>
+          </aside>
+        </div>
+        <div class="inventory-card" id="inventory" aria-label="Current inventory list">
+          <h2>Available Now</h2>
+          <p class="inventory-note">Approximate weights and totals shown.</p>
+          <div class="inventory-table-wrap">
+            <table class="inventory-table">
+              <thead>
+                <tr>
+                  <th scope="col">Cut</th>
+                  <th scope="col">Approx. quantity</th>
+                  <th scope="col">Estimated total</th>
+                </tr>
+              </thead>
+              <tbody id="inventory-tbody"></tbody>
+            </table>
+          </div>
+          <template id="inventory-fallback-template">
+            <tr><td>Filet Mignon</td><td>3.66 lbs</td><td>$117.12</td></tr>
+            <tr><td>Flat Iron</td><td>1.46 lbs</td><td>$33.21</td></tr>
+            <tr><td>Beef Round Steak</td><td>2.84 lbs</td><td>$31.24</td></tr>
+            <tr><td>Short Ribs (Slab)</td><td>7.62 lbs</td><td>$99.06</td></tr>
+            <tr><td>Short Ribs (Square)</td><td>8.60 lbs</td><td>$124.70</td></tr>
+            <tr><td>Rump Roast</td><td>7.00 lbs (2 roasts)</td><td>$70.00</td></tr>
+            <tr><td>Eye of Round Roast</td><td>7.00 lbs (2 roasts)</td><td>$63.00</td></tr>
+            <tr><td>Cubed Steak</td><td>7.44 lbs</td><td>$74.40</td></tr>
+            <tr><td>Beef Stew Meat</td><td>9.00 lbs</td><td>$90.00</td></tr>
+            <tr><td>Liver</td><td>9.00 lbs</td><td>$99.00</td></tr>
+            <tr><td>Beef Hearts</td><td>0.80 lbs</td><td>$5.59</td></tr>
+            <tr><td>Marrow Bones</td><td>6 bones</td><td>$42.00</td></tr>
+            <tr><td>Beef Fat</td><td>Two 5 lb bags</td><td>$60.00</td></tr>
+          </template>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>&copy; <span data-year></span> Colibri Land &amp; Cattle. All rights reserved.</span>
+      <span><a href="index.html">Back to home</a></span>
+    </footer>
+
+    <script>
+      document.querySelector("[data-year]").textContent = new Date().getFullYear();
+
+      (function logoFallback() {
+        var imgs = document.querySelectorAll("[data-logo]");
+        imgs.forEach(function (img) {
+          img.addEventListener("error", function () {
+            if (img.hasAttribute("data-logo")) img.remove();
+          });
+        });
+      })();
+
+      (function mobileMenuScrollLock() {
+        var nav = document.querySelector(".nav-mobile");
+        if (!nav) return;
+        nav.addEventListener("toggle", function () {
+          document.body.style.overflow = nav.open ? "hidden" : "";
+        });
+      })();
+
+      (function mobileNavCloseOnNavigate() {
+        var nav = document.querySelector(".nav-mobile");
+        if (!nav) return;
+        nav.querySelectorAll(".nav-panel-link").forEach(function (a) {
+          a.addEventListener("click", function () {
+            nav.removeAttribute("open");
+          });
+        });
+      })();
+
+      (function inventoryFromJson() {
+        var tbody = document.getElementById("inventory-tbody");
+        var note = document.querySelector(".inventory-note");
+        var fallback = document.getElementById("inventory-fallback-template");
+        if (!tbody) return;
+
+        function applyRows(rows) {
+          tbody.textContent = "";
+          rows.forEach(function (r) {
+            var tr = document.createElement("tr");
+            [r.cut, r.quantity, r.total].forEach(function (text) {
+              var td = document.createElement("td");
+              td.textContent = text == null ? "" : String(text);
+              tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+          });
+        }
+
+        function useFallback() {
+          tbody.textContent = "";
+          if (fallback && fallback.content) {
+            tbody.appendChild(fallback.content.cloneNode(true));
+            if (note) {
+              note.textContent =
+                "Approximate weights and totals shown, contact us directly for the most up to date information.";
+            }
+          } else {
+            tbody.innerHTML =
+              "<tr><td colspan=\"3\">Inventory could not be loaded. See the price sheet or contact us.</td></tr>";
+          }
+        }
+
+        fetch("assets/inventory.json", { cache: "no-store" })
+          .then(function (res) {
+            if (!res.ok) throw new Error("bad status");
+            return res.json();
+          })
+          .then(function (data) {
+            if (!data || !Array.isArray(data.rows) || !data.rows.length) {
+              useFallback();
+              return;
+            }
+            applyRows(data.rows);
+            if (note && data.updatedAt) {
+              try {
+                var d = new Date(data.updatedAt);
+                if (!isNaN(d.getTime())) {
+                  note.textContent =
+                    "Approximate weights and totals shown. Last updated " +
+                    d.toLocaleDateString(undefined, { dateStyle: "medium" }) +
+                    ".";
+                }
+              } catch (e) {
+                /* keep default note */
+              }
+            }
+          })
+          .catch(function () {
+            useFallback();
+          });
+      })();
+    </script>
+  </body>
+</html>
