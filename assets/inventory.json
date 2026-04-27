@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-04-26T07:25:21.314Z",
+  "updatedAt": "2026-04-27T08:19:26.310Z",
   "source": "google-sheet-csv",
   "rows": [
     {
@@ -73,12 +73,6 @@
       "quantity": "6 bones",
       "pricePerLb": "$7.00",
       "total": "$42.00"
-    },
-    {
-      "cut": "Beef Fat",
-      "quantity": "Two 5 lb bags",
-      "pricePerLb": "$6.00",
-      "total": "$60.00"
     }
   ]
 }
