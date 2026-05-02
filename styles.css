@@ -1087,6 +1087,114 @@ a:hover {
   white-space: nowrap;
 }
 
+.inventory-row-message td {
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .inventory-table-wrap {
+    overflow-x: visible;
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
+  }
+
+  .inventory-table {
+    min-width: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .inventory-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .inventory-table tbody tr {
+    display: block;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.65rem;
+    background: var(--color-bg);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .inventory-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem 1rem;
+    padding: 0.45rem 0;
+    border: none;
+    text-align: left;
+    white-space: normal;
+    vertical-align: top;
+  }
+
+  .inventory-table tbody td::before {
+    content: attr(data-label);
+    flex: 0 1 auto;
+    max-width: 46%;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+    line-height: 1.35;
+  }
+
+  .inventory-table tbody td .inventory-cell-value {
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: right;
+    word-break: break-word;
+  }
+
+  .inventory-table tbody td:first-child {
+    flex-wrap: wrap;
+    padding-top: 0;
+    padding-bottom: 0.55rem;
+    margin-bottom: 0.35rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .inventory-table tbody td:first-child::before {
+    flex: 1 0 100%;
+    max-width: none;
+    margin-bottom: 0.2rem;
+  }
+
+  .inventory-table tbody td:first-child .inventory-cell-value {
+    flex: 1 1 100%;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.06rem;
+    font-family: var(--font-display);
+  }
+
+  .inventory-row-message td {
+    display: block;
+    text-align: center;
+    padding: 1rem 0.5rem;
+  }
+
+  .inventory-row-message td::before {
+    display: none;
+  }
+
+  .inventory-row-message .inventory-cell-value {
+    text-align: center;
+    display: block;
+  }
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));

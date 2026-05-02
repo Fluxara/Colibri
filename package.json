@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "sync-inventory": "node scripts/sync-inventory.mjs"
+    "sync-inventory": "node scripts/sync-inventory.mjs",
+    "dev": "npx vercel dev"
   }
 }

@@ -2,6 +2,17 @@
 
 Static site: `index.html`, `gallery.html`, `styles.css`, and `assets/`.
 
+## Run API routes locally (optional)
+
+The `api/` folder includes serverless handlers (for example `GET /api/availability`). To run them with the static site:
+
+```bash
+npm install
+npm run dev
+```
+
+This uses `vercel dev` to serve the static site and API routes together.
+
 ## Automated inventory (Google Sheet)
 
 Inventory on the home page is loaded from [`assets/inventory.json`](assets/inventory.json). To update it **without** editing the repo every day:
