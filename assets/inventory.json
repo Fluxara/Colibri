@@ -1,12 +1,12 @@
 {
-  "updatedAt": "2026-05-02T07:28:58.037Z",
+  "updatedAt": "2026-05-03T07:58:17.060Z",
   "source": "google-sheet-csv",
   "rows": [
     {
       "cut": "Filet Mignon",
-      "quantity": "3.66 lbs",
+      "quantity": "1.00 lb",
       "pricePerLb": "$32.00",
-      "total": "$117.12"
+      "total": "$32.00"
     },
     {
       "cut": "Flat Iron",
