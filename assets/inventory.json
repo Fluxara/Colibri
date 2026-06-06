@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-06T21:42:02.446Z",
+  "updatedAt": "2026-06-06T21:49:53.646Z",
   "source": "google-sheet-csv",
   "rows": [
     {
@@ -106,9 +106,9 @@
     },
     {
       "cut": "Marrow Bones",
-      "quantity": "10 Bones",
+      "quantity": "16 Bones",
       "pricePerLb": "$7.00",
-      "total": "$70.00"
+      "total": "$112.00"
     },
     {
       "cut": "Liver",
