@@ -1,12 +1,54 @@
 {
-  "updatedAt": "2026-06-06T08:30:31.523Z",
+  "updatedAt": "2026-06-06T21:42:02.446Z",
   "source": "google-sheet-csv",
   "rows": [
     {
-      "cut": "Flat Iron",
-      "quantity": "1.46 lbs",
+      "cut": "Ground Beef",
+      "quantity": "168 lbs",
+      "pricePerLb": "$8.99",
+      "total": "$1,510.32"
+    },
+    {
+      "cut": "Filet Mignon Steak",
+      "quantity": "4.27 lbs",
+      "pricePerLb": "$32.00",
+      "total": "$136.64"
+    },
+    {
+      "cut": "Sirloin Steak",
+      "quantity": "5.22 lbs",
+      "pricePerLb": "$14.50",
+      "total": "$75.69"
+    },
+    {
+      "cut": "Ribeye Steak",
+      "quantity": "22.91lbs",
+      "pricePerLb": "$24.00",
+      "total": "$550.00"
+    },
+    {
+      "cut": "NY Strip Steak",
+      "quantity": "8.40 lbs",
+      "pricePerLb": "$23.00",
+      "total": "$193.20"
+    },
+    {
+      "cut": "Flat Iron Steak",
+      "quantity": "5.00 lbs",
       "pricePerLb": "$13.50",
-      "total": "$33.21"
+      "total": "$67.50"
+    },
+    {
+      "cut": "Flank Steak",
+      "quantity": "1.93 lbs",
+      "pricePerLb": "$16.99",
+      "total": "$32.80"
+    },
+    {
+      "cut": "Skirt Steak",
+      "quantity": "2.29 lbs",
+      "pricePerLb": "$14.00",
+      "total": "$32.06"
     },
     {
       "cut": "Beef Round Steak",
@@ -18,13 +60,25 @@
       "cut": "Short Ribs (Slab)",
       "quantity": "7.62 lbs",
       "pricePerLb": "$13.00",
-      "total": "$99.06"
+      "total": "$218.15"
     },
     {
       "cut": "Short Ribs (Square)",
-      "quantity": "8.60 lbs",
+      "quantity": "22.71 lbs",
       "pricePerLb": "$14.50",
-      "total": "$124.70"
+      "total": "$330.00"
+    },
+    {
+      "cut": "Chuck Roast",
+      "quantity": "19.00 lbs (6 roasts)",
+      "pricePerLb": "$10.50",
+      "total": "$210.00"
+    },
+    {
+      "cut": "Sirloin Tip Roasts",
+      "quantity": "13.00 lbs (2 roasts)",
+      "pricePerLb": "$10.25",
+      "total": "$133.25"
     },
     {
       "cut": "Rump Roast",
@@ -34,7 +88,7 @@
     },
     {
       "cut": "Eye of Round Roast",
-      "quantity": "6.00 lbs (2 roasts)",
+      "quantity": "12.00 lbs (4 roasts)",
       "pricePerLb": "$9.00",
       "total": "$63.00"
     },
@@ -42,13 +96,19 @@
       "cut": "Cubed Steak",
       "quantity": "7.44 lbs",
       "pricePerLb": "$10.00",
-      "total": "$74.40"
+      "total": "$110.00"
     },
     {
       "cut": "Beef Stew Meat",
-      "quantity": "9.00 lbs",
+      "quantity": "27.00 lbs",
       "pricePerLb": "$9.00",
-      "total": "$90.00"
+      "total": "$243.00"
+    },
+    {
+      "cut": "Marrow Bones",
+      "quantity": "10 Bones",
+      "pricePerLb": "$7.00",
+      "total": "$70.00"
     },
     {
       "cut": "Liver",
